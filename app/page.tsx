@@ -18,7 +18,7 @@ export default function Home() {
           <div className="relative z-10 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <h2 className="text-2xl font-black tracking-[-0.03em] text-white sm:text-3xl">Присоединяйся к нашему сообществу</h2>
-              <p className="mt-2 max-w-2xl text-base font-semibold text-slate-300">Обсуждай, делись теориями, находи команду для игры</p>
+              <p className="mt-2 max-w-2xl text-base font-semibold text-slate-300">Обсуждай новости, делись теориями и находи команду для игры.</p>
             </div>
             <NeonButton href="https://discord.com/" external className="rounded-md px-10 py-3 text-xs">
               Присоединиться
