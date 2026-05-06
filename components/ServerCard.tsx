@@ -19,8 +19,8 @@ export function ServerCard({ server }: ServerCardProps) {
       </div>
       <div className="p-4">
         <h3 className="text-lg font-black text-white">{server.name}</h3>
-        <span className="mt-2 inline-flex rounded-md border border-white/10 bg-white/[0.06] px-2 py-1 text-[0.65rem] font-black text-slate-200">{server.status}</span>
-        <p className="mt-4 text-sm font-semibold text-slate-300"><span className="text-pink-300">◉</span> Онлайн: {server.online}</p>
+        <span className="mt-2 inline-flex rounded-md border border-white/10 bg-white/[0.06] px-2 py-1 text-[0.65rem] font-black text-slate-200">{server.mode} · {server.language}</span>
+        <p className="mt-4 text-sm font-semibold leading-6 text-slate-300"><span className="text-pink-300">◉</span> Онлайн {server.online}</p>
         <div className="mt-5">
           <NeonButton href="/servera" variant="ghost" className="rounded-md border-pink-400/45 px-4 py-2.5 text-xs text-pink-200">
             Подробнее
