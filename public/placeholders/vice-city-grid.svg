@@ -1,0 +1,20 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#050816"/>
+  <radialGradient id="pink" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(910 120) rotate(126) scale(620)">
+    <stop stop-color="#ff3bd4" stop-opacity="0.72"/>
+    <stop offset="1" stop-color="#050816" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="cyan" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(250 210) rotate(45) scale(520)">
+    <stop stop-color="#23d9ff" stop-opacity="0.45"/>
+    <stop offset="1" stop-color="#050816" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1200" height="675" fill="url(#pink)"/>
+  <rect width="1200" height="675" fill="url(#cyan)"/>
+  <path d="M0 540H1200" stroke="#23d9ff" stroke-opacity="0.35" stroke-width="2"/>
+  <path d="M0 595H1200" stroke="#23d9ff" stroke-opacity="0.22"/>
+  <path d="M0 640H1200" stroke="#23d9ff" stroke-opacity="0.12"/>
+  <g stroke="#ff3bd4" stroke-opacity="0.25">
+    <path d="M60 675L510 425"/><path d="M220 675L585 425"/><path d="M380 675L660 425"/><path d="M540 675L735 425"/><path d="M700 675L810 425"/><path d="M860 675L885 425"/><path d="M1020 675L960 425"/><path d="M1180 675L1035 425"/>
+  </g>
+  <text x="70" y="120" fill="#ffffff" fill-opacity="0.9" font-family="Arial, sans-serif" font-size="42" font-weight="700">GTA 6 PORTAL</text>
+</svg>
