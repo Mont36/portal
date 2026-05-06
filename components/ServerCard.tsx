@@ -1,37 +1,31 @@
 import { NeonButton } from "@/components/NeonButton";
 import type { ServerItem } from "@/lib/mock-data";
 
+const tone = {
+  pink: "from-pink-500/80 via-fuchsia-500/35 to-slate-950",
+  cyan: "from-cyan-300/75 via-blue-500/35 to-slate-950",
+  violet: "from-violet-500/75 via-orange-400/25 to-slate-950",
+};
+
 type ServerCardProps = {
   server: ServerItem;
 };
 
 export function ServerCard({ server }: ServerCardProps) {
   return (
-    <article className="neon-card group relative overflow-hidden rounded-3xl p-5 transition duration-300 hover:-translate-y-1 hover:border-pink-200/35">
-      <div className="absolute -right-12 -top-12 size-36 rounded-full bg-pink-500/15 blur-3xl transition group-hover:bg-cyan-400/20" />
-      <div className="relative flex items-start justify-between gap-4">
-        <div>
-          <p className="text-xs font-black uppercase tracking-[0.18em] text-cyan-200">{server.mode}</p>
-          <h3 className="mt-2 text-xl font-black text-white">{server.name}</h3>
-        </div>
-        <span className="rounded-full border border-emerald-300/25 bg-emerald-400/10 px-3 py-1 text-xs font-black text-emerald-100">{server.status}</span>
+    <article className="group overflow-hidden rounded-lg border border-white/10 bg-[#080d18] shadow-[0_18px_50px_rgba(0,0,0,0.3)] transition hover:-translate-y-1 hover:border-pink-300/40">
+      <div className={`server-visual relative h-32 bg-gradient-to-br ${tone[server.accent]}`}>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_45%_12%,rgba(255,224,166,.65),transparent_4rem),linear-gradient(to_top,rgba(3,7,18,.78),transparent)]" />
       </div>
-      <div className="relative mt-5 grid grid-cols-2 gap-3 text-sm">
-        <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-3">
-          <p className="text-xs uppercase tracking-[0.14em] text-slate-500">Язык</p>
-          <p className="mt-1 font-black text-white">{server.language}</p>
+      <div className="p-4">
+        <h3 className="text-lg font-black text-white">{server.name}</h3>
+        <span className="mt-2 inline-flex rounded-md border border-white/10 bg-white/[0.06] px-2 py-1 text-[0.65rem] font-black text-slate-200">{server.status}</span>
+        <p className="mt-4 text-sm font-semibold text-slate-300"><span className="text-pink-300">◉</span> Онлайн: {server.online}</p>
+        <div className="mt-5">
+          <NeonButton href="/servera" variant="ghost" className="rounded-md border-pink-400/45 px-4 py-2.5 text-xs text-pink-200">
+            Подробнее
+          </NeonButton>
         </div>
-        <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-3">
-          <p className="text-xs uppercase tracking-[0.14em] text-slate-500">Онлайн</p>
-          <p className="mt-1 font-black text-cyan-100">{server.online}</p>
-        </div>
-      </div>
-      <p className="relative mt-4 text-sm leading-6 text-slate-300">{server.description}</p>
-      <div className="relative mt-5 flex items-center justify-between gap-3">
-        <span className="rounded-full border border-white/10 px-3 py-1 text-xs font-bold text-slate-300">#{server.tag}</span>
-        <NeonButton href="/servera" variant="secondary" className="px-4 py-2 text-xs">
-          Подробнее
-        </NeonButton>
       </div>
     </article>
   );
