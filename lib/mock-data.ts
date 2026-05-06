@@ -6,6 +6,7 @@ export type NavItem = {
 export type QuickLink = NavItem & {
   description: string;
   accent: "pink" | "cyan" | "violet";
+  icon: string;
 };
 
 export type NewsItem = {
@@ -16,12 +17,15 @@ export type NewsItem = {
   href: string;
   date: string;
   image: string;
+  accent: "pink" | "cyan" | "violet";
 };
 
 export type ServerItem = {
   name: string;
   mode: string;
+  language: "RU" | "EN";
   online: string;
+  status: string;
   description: string;
   tag: string;
 };
@@ -30,6 +34,14 @@ export type DiscussionItem = {
   title: string;
   comments: number;
   href: string;
+};
+
+export type ImportantSectionItem = {
+  title: string;
+  description: string;
+  href: string;
+  cta: string;
+  accent: "pink" | "cyan" | "violet";
 };
 
 export type PageContent = {
@@ -68,23 +80,24 @@ export const navItems: NavItem[] = [
 ];
 
 export const quickLinks: QuickLink[] = [
-  { title: "Дата выхода", href: "/gta-6-data-vyhoda", description: "Следим за релизом и переносами", accent: "pink" },
-  { title: "Карта", href: "/karta", description: "Вайс-Сити, Леонида и ключевые зоны", accent: "cyan" },
-  { title: "Персонажи", href: "/personazhi", description: "Главные герои, слухи и факты", accent: "violet" },
-  { title: "GTA 6 Online", href: "/online", description: "Что ждать от мультиплеера", accent: "pink" },
-  { title: "RP серверы", href: "/rp", description: "Будущее ролевых проектов", accent: "cyan" },
-  { title: "Гайды", href: "/news", description: "Разборы трейлеров и механик", accent: "violet" },
+  { title: "Дата выхода", href: "/gta-6-data-vyhoda", description: "Таймер, платформы и ожидания релиза", accent: "pink", icon: "◷" },
+  { title: "Карта", href: "/karta", description: "Вайс-Сити, Леонида и ключевые зоны", accent: "cyan", icon: "◇" },
+  { title: "Персонажи", href: "/personazhi", description: "Герои, сюжет и связи", accent: "violet", icon: "✦" },
+  { title: "GTA 6 Online", href: "/online", description: "Мультиплеер, экономика, сезоны", accent: "pink", icon: "◎" },
+  { title: "RP серверы", href: "/rp", description: "Будущее ролевых проектов", accent: "cyan", icon: "◆" },
+  { title: "Гайды", href: "/news", description: "Разборы трейлеров и механик", accent: "violet", icon: "▣" },
 ];
 
 export const latestNews: NewsItem[] = [
   {
     id: "release-window",
     title: "GTA 6 получила точную дату релиза: что важно знать игрокам",
-    excerpt: "Собрали главное о заявленном окне запуска, версиях для консолей и ожиданиях игроков в России.",
+    excerpt: "Собрали главное о заявленном запуске, версиях для консолей и ожиданиях игроков в России.",
     category: "Дата выхода",
     href: "/gta-6-data-vyhoda",
     date: "6 мая 2026",
     image: "/placeholders/card-neon.svg",
+    accent: "pink",
   },
   {
     id: "vice-city-map",
@@ -94,6 +107,7 @@ export const latestNews: NewsItem[] = [
     href: "/karta",
     date: "5 мая 2026",
     image: "/placeholders/card-neon.svg",
+    accent: "cyan",
   },
   {
     id: "online-rp",
@@ -103,6 +117,58 @@ export const latestNews: NewsItem[] = [
     href: "/online",
     date: "4 мая 2026",
     image: "/placeholders/server-neon.svg",
+    accent: "violet",
+  },
+  {
+    id: "pc-version",
+    title: "PC-версия GTA 6: какие вопросы остаются открытыми",
+    excerpt: "Отдельный трек ожиданий для игроков на ПК: сроки, графика, моды и системные требования.",
+    category: "PC",
+    href: "/gta-6-na-pk",
+    date: "3 мая 2026",
+    image: "/placeholders/card-neon.svg",
+    accent: "cyan",
+  },
+  {
+    id: "characters-story",
+    title: "Персонажи и сюжет: что фанаты ищут в новых кадрах",
+    excerpt: "Безопасно отделяем подтверждённые детали от теорий и собираем базу героев портала.",
+    category: "Персонажи",
+    href: "/personazhi",
+    date: "2 мая 2026",
+    image: "/placeholders/card-neon.svg",
+    accent: "pink",
+  },
+];
+
+export const importantSections: ImportantSectionItem[] = [
+  {
+    title: "Карта GTA 6",
+    description: "Визуальная база районов: побережье, трассы, болота, центр Вайс-Сити и будущие точки интереса.",
+    href: "/karta",
+    cta: "Открыть карту",
+    accent: "cyan",
+  },
+  {
+    title: "Персонажи",
+    description: "Герои, отношения, мотивация и сюжетные детали без спойлеров и без непроверенных утверждений.",
+    href: "/personazhi",
+    cta: "Смотреть героев",
+    accent: "pink",
+  },
+  {
+    title: "GTA 6 Online",
+    description: "Мультиплеерный хаб: активности, обновления, экономика, сезоны и совместная игра.",
+    href: "/online",
+    cta: "К Online",
+    accent: "violet",
+  },
+  {
+    title: "RP сервера",
+    description: "Будущий каталог RP-проектов, правил, фракций, профессий и гайдов для новичков.",
+    href: "/rp",
+    cta: "Изучить RP",
+    accent: "cyan",
   },
 ];
 
@@ -117,23 +183,38 @@ export const servers: ServerItem[] = [
   {
     name: "Vice Roleplay",
     mode: "Hard RP",
+    language: "RU",
     online: "скоро",
+    status: "лист ожидания",
     description: "Премиальный RP-проект с акцентом на криминальные истории, бизнесы и медиа.",
     tag: "ожидание GTA 6",
   },
   {
     name: "Leonida Life",
     mode: "Medium RP",
+    language: "RU",
     online: "скоро",
+    status: "концепт",
     description: "Городская жизнь, полиция, банды, недвижимость и карьерные ветки для новичков.",
     tag: "русскоязычный",
   },
   {
     name: "Neon State",
     mode: "RP / Online",
+    language: "EN",
     online: "скоро",
+    status: "набор команды",
     description: "Сервер для игроков, которые хотят баланс между RP, гонками и открытым миром.",
     tag: "community",
+  },
+  {
+    name: "Ocean Drive RP",
+    mode: "Soft RP",
+    language: "RU",
+    online: "скоро",
+    status: "анонс",
+    description: "Лёгкий вход для новичков, социальные активности, автокультура и вечерние ивенты.",
+    tag: "new player friendly",
   },
 ];
 
@@ -141,6 +222,7 @@ export const discussions: DiscussionItem[] = [
   { title: "Будет ли GTA 6 на ПК в день релиза?", comments: 128, href: "/gta-6-na-pk" },
   { title: "Какие районы Вайс-Сити покажут во втором трейлере?", comments: 96, href: "/karta" },
   { title: "Нужны ли строгие RP-правила на старте GTA 6?", comments: 74, href: "/rp" },
+  { title: "Каким должен быть первый русский RP-каталог?", comments: 53, href: "/servera" },
 ];
 
 export const pageContents: Record<string, PageContent> = {
