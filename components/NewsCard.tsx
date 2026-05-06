@@ -4,9 +4,9 @@ import type { NewsItem } from "@/lib/mock-data";
 
 export function NewsCard({ item }: { item: NewsItem }) {
   return (
-    <article className="neon-card overflow-hidden rounded-3xl transition hover:-translate-y-1">
+    <article className="neon-card group overflow-hidden rounded-3xl transition duration-300 hover:-translate-y-1">
       <Link href={item.href} className="block">
-        <Image src={item.image} alt="Градиентный placeholder новости GTA 6" width={800} height={450} className="aspect-video w-full object-cover" />
+        <div className="overflow-hidden"><Image src={item.image} alt="Градиентный preview новости GTA 6" width={800} height={450} className="aspect-video w-full object-cover transition duration-700 ease-out group-hover:scale-[1.035]" /></div>
         <div className="p-5">
           <div className="mb-3 flex items-center justify-between gap-3 text-xs font-bold uppercase tracking-[0.16em] text-cyan-200">
             <span>{item.category}</span>

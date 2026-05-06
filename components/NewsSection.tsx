@@ -8,9 +8,9 @@ const visualClass = {
   violet: "from-[#19142c] via-[#32204d] to-[#03040a]",
 };
 
-function CinematicVisual({ accent, small = false }: { accent: keyof typeof visualClass; small?: boolean }) {
+function CinematicVisual({ accent, small = false, className = "" }: { accent: keyof typeof visualClass; small?: boolean; className?: string }) {
   return (
-    <div className={`relative overflow-hidden bg-gradient-to-br ${visualClass[accent]} ${small ? "h-full min-h-24 rounded-xl" : "h-[380px] rounded-2xl"}`}>
+    <div className={`relative overflow-hidden bg-gradient-to-br ${visualClass[accent]} ${small ? "h-full min-h-24 rounded-xl" : "h-[380px] rounded-2xl"} ${className}`}>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_20%,rgba(255,214,154,.38),transparent_4.8rem),radial-gradient(circle_at_78%_36%,rgba(255,46,196,.18),transparent_7rem),linear-gradient(180deg,rgba(255,255,255,.025),rgba(2,4,12,.9))]" />
       <div className="absolute inset-x-0 bottom-0 h-2/3 bg-[linear-gradient(to_top,rgba(3,4,10,.98),rgba(3,4,10,.36),transparent)]" />
       <div className="absolute bottom-[13%] left-[7%] h-28 w-16 bg-black/55 blur-[1px] [clip-path:polygon(42%_0,58%_0,66%_100%,36%_100%)]" />
@@ -29,15 +29,15 @@ export function NewsSection() {
   return (
     <section className="container pb-4 pt-1 sm:pb-6">
       <div className="grid gap-4 lg:grid-cols-[1fr_340px] xl:grid-cols-[1fr_360px]">
-        <div className="rounded-2xl border border-white/[0.065] bg-[#050711]/88 p-5 sm:p-6 shadow-[0_22px_70px_rgba(0,0,0,0.36),inset_0_1px_0_rgba(255,255,255,0.04)]">
+        <div className="rounded-2xl bg-[#050711]/84 p-5 shadow-[0_22px_70px_rgba(0,0,0,0.34),inset_0_1px_0_rgba(255,255,255,0.025)] ring-1 ring-white/[0.025] sm:p-6">
           <div className="mb-5 flex items-center justify-between gap-4">
             <h2 className="text-xl font-black uppercase tracking-[-0.02em] text-white sm:text-2xl">Последние новости</h2>
             <Link href="/news" className="text-xs font-black text-pink-400 transition hover:text-pink-200">Все новости</Link>
           </div>
 
           <div className="grid gap-5 xl:grid-cols-[1.12fr_0.88fr]">
-            <Link href={featured.href} className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-slate-950/70 shadow-[0_20px_55px_rgba(0,0,0,0.38)]">
-              <CinematicVisual accent={featured.accent} />
+            <Link href={featured.href} className="group relative overflow-hidden rounded-2xl bg-slate-950/70 shadow-[0_20px_55px_rgba(0,0,0,0.36)] ring-1 ring-white/[0.025]">
+              <CinematicVisual accent={featured.accent} className="transition duration-700 ease-out group-hover:scale-[1.025]" />
               <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
                 <span className="rounded-full bg-white/12 px-3 py-1 text-[0.65rem] font-black uppercase text-white backdrop-blur">{featured.category}</span>
                 <h3 className="mt-4 text-2xl font-black leading-tight text-white transition group-hover:text-pink-100">{featured.title}</h3>
@@ -51,8 +51,8 @@ export function NewsSection() {
 
             <div className="grid gap-4">
               {sideNews.slice(0, 3).map((item) => (
-                <Link key={item.id} href={item.href} className="group grid grid-cols-[128px_1fr] gap-4 border-b border-white/[0.07] pb-4 last:border-b-0 last:pb-0 sm:grid-cols-[156px_1fr] xl:grid-cols-[150px_1fr]">
-                  <CinematicVisual accent={item.accent} small />
+                <Link key={item.id} href={item.href} className="group grid grid-cols-[128px_1fr] gap-4 rounded-xl px-1 py-1 transition duration-300 hover:bg-white/[0.025] sm:grid-cols-[156px_1fr] xl:grid-cols-[150px_1fr]">
+                  <CinematicVisual accent={item.accent} small className="transition duration-700 ease-out group-hover:scale-[1.035]" />
                   <div className="min-w-0 py-1">
                     <p className="text-[0.65rem] font-black uppercase tracking-[0.08em] text-slate-500">{item.category}</p>
                     <h3 className="mt-2 text-base font-black leading-snug text-white transition group-hover:text-pink-200">{item.title}</h3>
@@ -68,7 +68,7 @@ export function NewsSection() {
         </div>
 
         <aside className="grid gap-4">
-          <div className="release-card relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#080a12] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
+          <div className="release-card relative overflow-hidden rounded-2xl bg-[#080a12] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.33)] ring-1 ring-white/[0.025]">
             <h3 className="relative z-10 text-xl font-black uppercase text-white">Дата выхода</h3>
             <div className="relative z-10 mt-24">
               <p className="text-[2rem] font-black uppercase leading-tight tracking-[-0.05em] text-white">19 ноября 2026</p>
@@ -77,7 +77,7 @@ export function NewsSection() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-white/[0.08] bg-[#050711]/95 p-5 shadow-[0_18px_55px_rgba(0,0,0,0.28)]">
+          <div className="rounded-2xl bg-[#050711]/92 p-5 shadow-[0_18px_55px_rgba(0,0,0,0.26)] ring-1 ring-white/[0.025]">
             <h3 className="text-xl font-black uppercase text-white">Подпишись на обновления</h3>
             <p className="mt-2 text-sm font-semibold text-slate-400">Будь в курсе всех новостей GTA 6</p>
             <div className="mt-5 grid grid-cols-3 gap-3">
@@ -94,11 +94,11 @@ export function NewsSection() {
 
 export function DiscussionsPreview() {
   return (
-    <div className="rounded-2xl border border-white/[0.08] bg-[#050711]/95 p-5 shadow-[0_18px_55px_rgba(0,0,0,0.28)]">
+    <div className="rounded-2xl bg-[#050711]/92 p-5 shadow-[0_18px_55px_rgba(0,0,0,0.26)] ring-1 ring-white/[0.025]">
       <h3 className="text-xl font-black uppercase text-white">Сейчас обсуждают</h3>
       <div className="mt-4 grid gap-1">
         {discussions.map((item) => (
-          <Link key={item.title} href={item.href} className="flex items-center justify-between gap-4 border-b border-white/[0.07] py-3 text-sm font-bold text-slate-200 transition last:border-b-0 hover:text-pink-200">
+          <Link key={item.title} href={item.href} className="flex items-center justify-between gap-4 rounded-lg px-1 py-3 text-sm font-bold text-slate-200 transition hover:bg-white/[0.025] hover:text-pink-200">
             <span>{item.title}</span>
             <span className="shrink-0 text-slate-500">◌ {item.comments}</span>
           </Link>

@@ -5,25 +5,25 @@ import { site } from "@/lib/mock-data";
 
 export function Hero() {
   return (
-    <section className="container pt-5 sm:pt-7">
-      <div className="hero-scene relative min-h-[620px] overflow-hidden rounded-[1.35rem] border border-white/[0.08] bg-[#03040a] shadow-[0_36px_120px_rgba(0,0,0,0.68),inset_0_1px_0_rgba(255,255,255,0.06)] sm:min-h-[640px] lg:min-h-[610px]">
+    <section className="container pt-4 sm:pt-6">
+      <div className="hero-scene relative min-h-[690px] overflow-hidden rounded-[1.6rem] bg-[#03040a] shadow-[0_42px_135px_rgba(0,0,0,0.7),inset_0_1px_0_rgba(255,255,255,0.035)] ring-1 ring-white/[0.035] sm:min-h-[720px] lg:min-h-[680px] xl:min-h-[720px]">
         <HeroVisual />
         <div className="absolute inset-0 z-10 bg-[linear-gradient(90deg,rgba(3,4,10,0.96)_0%,rgba(3,4,10,0.9)_26%,rgba(3,4,10,0.52)_48%,rgba(3,4,10,0.12)_72%,rgba(3,4,10,0.28)_100%)]" />
         <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(3,4,10,0.72)_0%,transparent_24%,transparent_62%,rgba(3,4,10,0.88)_100%)]" />
         <div className="absolute inset-0 z-10 shadow-[inset_0_0_150px_rgba(0,0,0,0.88)]" />
 
-        <div className="relative z-20 flex min-h-[620px] items-start px-5 py-10 sm:min-h-[640px] sm:px-9 sm:py-12 lg:min-h-[610px] lg:items-center lg:px-14 xl:px-16">
-          <div className="max-w-[525px] pt-6 sm:pt-8 lg:pt-0">
-            <p className="mb-5 inline-flex rounded-full border border-white/[0.12] bg-black/35 px-3 py-1.5 text-[0.66rem] font-black uppercase tracking-[0.22em] text-pink-100/90 shadow-[0_0_26px_rgba(255,46,196,0.12)] backdrop-blur-md">
+        <div className="relative z-20 flex min-h-[690px] items-start px-6 py-12 sm:min-h-[720px] sm:px-11 sm:py-16 lg:min-h-[680px] lg:items-center lg:px-16 xl:min-h-[720px] xl:px-20">
+          <div className="max-w-[570px] pt-8 sm:pt-10 lg:pt-0">
+            <p className="mb-5 inline-flex rounded-full ring-1 ring-white/[0.08] bg-black/32 px-3 py-1.5 text-[0.66rem] font-black uppercase tracking-[0.22em] text-pink-100/90 shadow-[0_0_26px_rgba(255,46,196,0.12)] backdrop-blur-md">
               GTA6Portal.ru / Главная
             </p>
-            <h1 className="text-[2.45rem] font-black leading-[1.03] tracking-[-0.045em] text-white drop-shadow-[0_8px_32px_rgba(0,0,0,0.84)] sm:text-[3.45rem] lg:text-[3.55rem] xl:text-[4.05rem]">
+            <h1 className="text-[2.45rem] font-black leading-[1.03] tracking-[-0.045em] text-white drop-shadow-[0_8px_32px_rgba(0,0,0,0.84)] sm:text-[3.45rem] lg:text-[3.55rem] xl:text-[4.35rem]">
               GTA 6 — всё, что известно на данный момент
             </h1>
-            <p className="mt-5 max-w-[500px] text-base font-semibold leading-7 text-slate-200/86 sm:text-lg">
+            <p className="mt-6 max-w-[530px] text-base font-semibold leading-7 text-slate-200/86 sm:text-lg">
               Новости, дата выхода, карта, персонажи, трейлеры, GTA 6 Online и будущие RP-серверы — в одном тёмном медиа-портале без лишнего шума.
             </p>
-            <div className="mt-8 max-w-[500px] rounded-2xl border border-white/[0.09] bg-black/30 p-4 shadow-[0_18px_60px_rgba(0,0,0,0.32)] backdrop-blur-md sm:p-5">
+            <div className="mt-9 max-w-[520px] rounded-2xl bg-black/28 ring-1 ring-white/[0.045] p-4 shadow-[0_18px_60px_rgba(0,0,0,0.32)] backdrop-blur-md sm:p-5">
               <p className="mb-3 text-xs font-black uppercase tracking-[0.12em] text-slate-300">До выхода GTA 6 осталось</p>
               <Countdown targetDate={site.releaseDateIso} compact />
             </div>

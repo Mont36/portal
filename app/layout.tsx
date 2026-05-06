@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   },
   description: site.description,
   alternates: { canonical: "/" },
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: ["/icon.svg"],
+    apple: [{ url: "/icon.svg", type: "image/svg+xml" }],
+  },
   openGraph: {
     title: `${site.name} — русский портал про GTA 6`,
     description: site.description,
