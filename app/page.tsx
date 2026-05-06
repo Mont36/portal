@@ -13,21 +13,16 @@ export default function Home() {
       <NewsSection />
       <ImportantSection />
       <ServersSection />
-      <section className="container py-8 sm:py-14">
-        <div className="neon-card relative overflow-hidden rounded-[2rem] p-6 sm:p-8 lg:p-10">
-          <div className="absolute -left-20 -top-20 size-72 rounded-full bg-pink-500/20 blur-3xl" />
-          <div className="absolute -bottom-24 right-0 size-80 rounded-full bg-cyan-400/18 blur-3xl" />
-          <div className="relative grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+      <section className="container pb-8 pt-3 sm:pb-10">
+        <div className="community-cta relative overflow-hidden rounded-lg border border-white/[0.08] bg-[#080b18] p-6 shadow-[0_24px_80px_rgba(0,0,0,0.36)] sm:p-8">
+          <div className="relative z-10 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
-              <p className="text-sm font-black uppercase tracking-[0.2em] text-cyan-200">Сообщество</p>
-              <h2 className="mt-2 text-3xl font-black sm:text-4xl">Присоединяйся к нашему сообществу</h2>
-              <p className="mt-3 max-w-2xl text-slate-300">Новости, разборы трейлеров, обсуждения карты, Online и RP-серверов — в публичных каналах без форм сбора персональных данных.</p>
+              <h2 className="text-2xl font-black tracking-[-0.03em] text-white sm:text-3xl">Присоединяйся к нашему сообществу</h2>
+              <p className="mt-2 max-w-2xl text-base font-semibold text-slate-300">Обсуждай, делись теориями, находи команду для игры</p>
             </div>
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <NeonButton href="https://t.me/" external variant="secondary">Telegram</NeonButton>
-              <NeonButton href="https://vk.com/" external variant="ghost">VK</NeonButton>
-              <NeonButton href="https://discord.com/" external>Discord</NeonButton>
-            </div>
+            <NeonButton href="https://discord.com/" external className="rounded-md px-10 py-3 text-xs">
+              Присоединиться
+            </NeonButton>
           </div>
         </div>
       </section>

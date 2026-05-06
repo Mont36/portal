@@ -89,3 +89,155 @@ a { color: inherit; text-decoration: none; }
     min-height: auto;
   }
 }
+
+/* Homepage reference-match scene primitives: CSS-only, no official GTA/Rockstar artwork. */
+.vice-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 72% 65%, rgba(255, 46, 196, 0.28), transparent 16rem), linear-gradient(90deg, transparent 0 70%, rgba(255, 46, 196, 0.12));
+  pointer-events: none;
+}
+
+.sun-disc {
+  box-shadow: 0 0 70px rgba(255, 157, 74, 0.5), 0 0 120px rgba(255, 46, 196, 0.35);
+}
+
+.city-skyline {
+  background:
+    linear-gradient(to top, rgba(4, 8, 22, 0.98), rgba(4, 8, 22, 0.8) 38%, transparent 39%) 0 100% / 100% 100%,
+    linear-gradient(to top, #11162b 0 46%, transparent 46%) 5% 100% / 6% 68% no-repeat,
+    linear-gradient(to top, #0c1022 0 56%, transparent 56%) 13% 100% / 5% 82% no-repeat,
+    linear-gradient(to top, #151733 0 42%, transparent 42%) 21% 100% / 7% 64% no-repeat,
+    linear-gradient(to top, #0f1530 0 60%, transparent 60%) 31% 100% / 6% 78% no-repeat,
+    linear-gradient(to top, #151936 0 50%, transparent 50%) 39% 100% / 8% 72% no-repeat,
+    linear-gradient(to top, #0d132a 0 67%, transparent 67%) 50% 100% / 5% 86% no-repeat,
+    linear-gradient(to top, #171837 0 54%, transparent 54%) 58% 100% / 8% 76% no-repeat,
+    linear-gradient(to top, #10152c 0 73%, transparent 73%) 69% 100% / 6% 92% no-repeat,
+    linear-gradient(to top, #17172f 0 45%, transparent 45%) 79% 100% / 10% 70% no-repeat,
+    linear-gradient(to top, #0d1329 0 62%, transparent 62%) 92% 100% / 6% 84% no-repeat;
+  filter: drop-shadow(0 0 16px rgba(34, 211, 238, 0.38)) drop-shadow(0 0 22px rgba(255, 46, 196, 0.25));
+}
+
+.palm::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 10px;
+  height: 82%;
+  background: linear-gradient(90deg, #080a12, #15101a, #050711);
+  border-radius: 999px;
+  transform: translateX(-50%) rotate(-4deg);
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.7);
+}
+
+.palm::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 2%;
+  width: 150px;
+  height: 100px;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(ellipse at 50% 100%, #050711 0 16%, transparent 17%),
+    linear-gradient(26deg, transparent 45%, #050711 46% 54%, transparent 55%),
+    linear-gradient(-26deg, transparent 45%, #050711 46% 54%, transparent 55%),
+    linear-gradient(64deg, transparent 45%, #050711 46% 54%, transparent 55%),
+    linear-gradient(-64deg, transparent 45%, #050711 46% 54%, transparent 55%),
+    linear-gradient(102deg, transparent 45%, #050711 46% 54%, transparent 55%),
+    linear-gradient(-102deg, transparent 45%, #050711 46% 54%, transparent 55%);
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.6));
+}
+
+.car-silhouette {
+  background:
+    radial-gradient(circle at 20% 82%, #050711 0 18%, #1b1021 19% 23%, transparent 24%),
+    radial-gradient(circle at 78% 82%, #050711 0 18%, #1b1021 19% 23%, transparent 24%),
+    linear-gradient(7deg, transparent 0 24%, #080912 25% 72%, transparent 73%),
+    linear-gradient(158deg, transparent 0 24%, #141124 25% 52%, transparent 53%),
+    linear-gradient(180deg, transparent 0 47%, #240e24 48% 69%, #050711 70%);
+  border-radius: 46% 34% 12px 14px;
+  box-shadow: inset 0 12px 0 rgba(255, 46, 196, 0.18), inset -38px 0 0 rgba(34, 211, 238, 0.09), 0 0 38px rgba(255, 46, 196, 0.24);
+}
+
+.release-card::before {
+  content: "";
+  position: absolute;
+  inset: 42px 0 auto;
+  height: 155px;
+  background:
+    radial-gradient(circle at 22% 18%, rgba(255, 159, 80, 0.55), transparent 4rem),
+    linear-gradient(180deg, rgba(117, 40, 166, 0.9), rgba(18, 22, 48, 0.85)),
+    linear-gradient(to top, #060914 0 28%, transparent 29%);
+}
+
+.release-card::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 77px;
+  height: 125px;
+  background:
+    linear-gradient(to top, rgba(3, 7, 18, 0.92), transparent),
+    linear-gradient(to top, #070914 0 54%, transparent 55%) 6% 100% / 10% 88% no-repeat,
+    linear-gradient(to top, #0a0e20 0 45%, transparent 46%) 21% 100% / 8% 72% no-repeat,
+    linear-gradient(to top, #121230 0 62%, transparent 63%) 39% 100% / 12% 96% no-repeat,
+    linear-gradient(to top, #0a0f22 0 42%, transparent 43%) 58% 100% / 8% 76% no-repeat,
+    linear-gradient(to top, #111229 0 58%, transparent 59%) 78% 100% / 13% 86% no-repeat;
+  filter: drop-shadow(0 0 14px rgba(255, 46, 196, 0.32));
+}
+
+.important-visual::before,
+.server-visual::before,
+.community-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px);
+  background-size: 34px 34px;
+  opacity: 0.28;
+}
+
+.map-card { background: radial-gradient(ellipse at 50% 24%, rgba(142, 233, 255, 0.75), transparent 8rem), linear-gradient(145deg, rgba(30, 151, 188, 0.6), transparent 46%); }
+.map-card::after { content: ""; position: absolute; inset: 28px 30px auto; height: 120px; border-radius: 48% 42% 54% 38%; border: 18px solid rgba(219, 246, 255, 0.5); transform: rotate(-18deg); box-shadow: 80px 34px 0 -18px rgba(255,255,255,.35), -26px 66px 0 -22px rgba(255,255,255,.36); }
+.people-card { background: radial-gradient(circle at 45% 30%, rgba(255, 210, 156, 0.72), transparent 8rem), linear-gradient(120deg, rgba(255, 46, 196, 0.42), transparent); }
+.people-card::after { content: ""; position: absolute; left: 20%; right: 18%; bottom: 26%; height: 128px; background: radial-gradient(circle at 30% 26%, #171018 0 15%, transparent 16%), radial-gradient(circle at 68% 23%, #171018 0 16%, transparent 17%), linear-gradient(90deg, transparent 0 18%, #19101a 19% 40%, transparent 41% 54%, #1a1018 55% 78%, transparent 79%); filter: drop-shadow(0 0 20px rgba(0,0,0,.6)); }
+.online-card { background: radial-gradient(circle at 54% 20%, rgba(255, 46, 196, 0.72), transparent 5rem), linear-gradient(180deg, rgba(88, 28, 135, 0.75), rgba(6, 11, 25, 0.1)); }
+.online-card::after { content: ""; position: absolute; inset-inline: 4%; bottom: 24%; height: 88px; background: linear-gradient(to top, #080b16 0 54%, transparent 55%) 0 100% / 13% 100% no-repeat, linear-gradient(to top, #11172d 0 78%, transparent 79%) 18% 100% / 10% 100% no-repeat, linear-gradient(to top, #080b16 0 48%, transparent 49%) 34% 100% / 16% 100% no-repeat, linear-gradient(to top, #11172d 0 70%, transparent 71%) 58% 100% / 12% 100% no-repeat, linear-gradient(to top, #080b16 0 58%, transparent 59%) 82% 100% / 18% 100% no-repeat; filter: drop-shadow(0 0 18px rgba(34,211,238,.36)); }
+.rp-card { background: radial-gradient(circle at 55% 18%, rgba(255, 87, 87, 0.62), transparent 7rem), linear-gradient(115deg, rgba(255, 46, 196, 0.52), transparent); }
+.rp-card::after { content: ""; position: absolute; left: 35%; bottom: 22%; width: 90px; height: 155px; border-radius: 50% 50% 10px 10px; background: radial-gradient(circle at 50% 15%, #100c14 0 20%, transparent 21%), linear-gradient(#141019 0 100%); filter: drop-shadow(0 0 20px rgba(0,0,0,.65)); }
+
+.server-visual::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 88px;
+  background:
+    linear-gradient(to top, rgba(3, 7, 18, 0.9), transparent),
+    linear-gradient(to top, #070914 0 50%, transparent 51%) 4% 100% / 13% 82% no-repeat,
+    linear-gradient(to top, #111229 0 66%, transparent 67%) 24% 100% / 10% 100% no-repeat,
+    linear-gradient(to top, #070914 0 44%, transparent 45%) 44% 100% / 16% 72% no-repeat,
+    linear-gradient(to top, #111229 0 55%, transparent 56%) 70% 100% / 15% 86% no-repeat,
+    linear-gradient(to top, #070914 0 48%, transparent 49%) 92% 100% / 10% 80% no-repeat;
+  filter: drop-shadow(0 0 15px rgba(255, 46, 196, 0.28));
+}
+
+.community-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 56% 38%, rgba(255, 46, 196, 0.4), transparent 16rem),
+    linear-gradient(90deg, rgba(8, 11, 24, 0.98) 0 35%, rgba(100, 20, 70, 0.64) 70%, rgba(8, 11, 24, 0.9)),
+    linear-gradient(to top, #050711 0 32%, transparent 33%);
+}
+
+.community-cta > * { position: relative; }
+
+@media (max-width: 1023px) {
+  .hero-scene { border-radius: 1rem; }
+  .car-silhouette { max-width: 78vw; right: 0; }
+}

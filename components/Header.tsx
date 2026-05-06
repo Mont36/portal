@@ -1,41 +1,41 @@
 import Link from "next/link";
-import { NeonButton } from "@/components/NeonButton";
 import { navItems } from "@/lib/mock-data";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 shadow-[0_12px_50px_rgba(0,0,0,0.28)] backdrop-blur-2xl">
-      <div className="container flex min-h-16 items-center justify-between gap-4 py-3">
-        <Link href="/" className="group flex items-center gap-3" aria-label="На главную GTA6Portal.ru">
-          <span className="relative grid size-11 place-items-center rounded-[1.15rem] border border-white/15 bg-gradient-to-br from-pink-500 via-violet-600 to-cyan-400 font-black text-white shadow-[0_0_36px_rgba(255,46,196,0.5)] transition group-hover:scale-105">
-            <span className="absolute inset-0 rounded-[1.15rem] bg-white/10 blur-md" />
-            <span className="relative">6</span>
-          </span>
-          <span className="leading-tight">
-            <span className="block text-sm font-black uppercase tracking-[0.24em] text-white drop-shadow-[0_0_14px_rgba(34,211,238,0.55)]">GTA 6</span>
-            <span className="block bg-gradient-to-r from-pink-200 via-white to-cyan-200 bg-clip-text text-sm font-black text-transparent">Portal.ru</span>
-          </span>
+    <header className="sticky top-0 z-50 border-b border-white/[0.08] bg-[#050712]/78 shadow-[0_18px_60px_rgba(0,0,0,0.42)] backdrop-blur-2xl">
+      <div className="container flex min-h-[76px] items-center justify-between gap-5">
+        <Link href="/" className="group flex min-w-max items-end gap-1.5 leading-none" aria-label="На главную GTA6Portal.ru">
+          <span className="text-[2rem] font-black uppercase tracking-[-0.08em] text-white drop-shadow-[0_0_18px_rgba(255,255,255,0.25)] sm:text-[2.35rem]">GTA6</span>
+          <span className="-mb-1 -ml-1 rotate-[-8deg] font-black italic tracking-[-0.08em] text-pink-400 drop-shadow-[0_0_13px_rgba(255,46,196,0.85)] transition group-hover:text-pink-200">Portal</span>
         </Link>
-        <nav className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.035] p-1 xl:flex" aria-label="Основная навигация">
+
+        <nav className="hidden flex-1 items-center justify-center gap-1 xl:flex" aria-label="Основная навигация">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="rounded-full px-3 py-2 text-sm font-bold text-slate-300 transition hover:bg-white/10 hover:text-white">
+            <Link key={`${item.href}-${item.title}`} href={item.href} className="rounded-xl px-3.5 py-2 text-[13px] font-extrabold text-slate-200/90 transition hover:bg-white/[0.06] hover:text-white hover:shadow-[inset_0_0_0_1px_rgba(255,46,196,0.18),0_0_24px_rgba(255,46,196,0.12)]">
               {item.title}
             </Link>
           ))}
         </nav>
-        <NeonButton href="/news" variant="secondary" className="hidden px-4 py-2 text-xs sm:inline-flex">
-          Войти в портал
-        </NeonButton>
+
+        <div className="flex items-center gap-3">
+          <Link href="/news" aria-label="Поиск" className="grid size-10 place-items-center rounded-full border border-transparent text-slate-200 transition hover:border-white/10 hover:bg-white/[0.06] hover:text-white">
+            <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+              <path d="m21 21-4.2-4.2" />
+              <circle cx="11" cy="11" r="6.5" />
+            </svg>
+          </Link>
+          <Link href="/news" className="rounded-lg border border-pink-300/35 bg-gradient-to-r from-pink-500 to-fuchsia-500 px-6 py-3 text-sm font-black text-white shadow-[0_0_26px_rgba(255,46,196,0.38)] transition hover:-translate-y-0.5 hover:shadow-[0_0_34px_rgba(255,46,196,0.52)]">
+            Войти
+          </Link>
+        </div>
       </div>
       <nav className="container flex gap-2 overflow-x-auto pb-3 xl:hidden" aria-label="Мобильная навигация">
         {navItems.map((item) => (
-          <Link key={item.href} href={item.href} className="shrink-0 rounded-full border border-white/10 bg-white/[0.06] px-3 py-2 text-xs font-bold text-slate-200 transition hover:border-cyan-200/40 hover:bg-cyan-300/10">
+          <Link key={`${item.href}-${item.title}-mobile`} href={item.href} className="shrink-0 rounded-full border border-white/10 bg-white/[0.06] px-3 py-2 text-xs font-bold text-slate-200 transition hover:border-pink-200/40 hover:bg-pink-300/10">
             {item.title}
           </Link>
         ))}
-        <Link href="/news" className="shrink-0 rounded-full border border-cyan-300/35 bg-cyan-300/10 px-3 py-2 text-xs font-black text-cyan-100 sm:hidden">
-          Войти
-        </Link>
       </nav>
     </header>
   );
