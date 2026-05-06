@@ -94,17 +94,23 @@ export function NewsSection() {
 
 export function DiscussionsPreview() {
   return (
-    <div className="rounded-2xl border border-white/[0.08] bg-[#050711]/95 p-5 shadow-[0_18px_55px_rgba(0,0,0,0.28)]">
-      <h3 className="text-xl font-black uppercase text-white">Сейчас обсуждают</h3>
-      <div className="mt-4 grid gap-1">
+    <aside className="rounded-[1.35rem] border border-white/[0.045] bg-[#050711]/78 p-4 shadow-[0_18px_52px_rgba(0,0,0,0.24),inset_0_1px_0_rgba(255,255,255,0.03)] sm:p-5">
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <p className="text-[0.64rem] font-black uppercase tracking-[0.2em] text-slate-500">Форум</p>
+          <h3 className="mt-1 text-lg font-black uppercase tracking-[-0.02em] text-white">Сейчас обсуждают</h3>
+        </div>
+        <span className="rounded-full bg-white/[0.04] px-2.5 py-1 text-[0.6rem] font-black uppercase tracking-[0.14em] text-slate-500">Live</span>
+      </div>
+      <div className="mt-3 divide-y divide-white/[0.055]">
         {discussions.map((item) => (
-          <Link key={item.title} href={item.href} className="flex items-center justify-between gap-4 border-b border-white/[0.07] py-3 text-sm font-bold text-slate-200 transition last:border-b-0 hover:text-pink-200">
-            <span>{item.title}</span>
-            <span className="shrink-0 text-slate-500">◌ {item.comments}</span>
+          <Link key={item.title} href={item.href} className="group flex items-center justify-between gap-4 py-2.5 text-sm text-slate-300 transition hover:text-pink-100">
+            <span className="font-semibold leading-5">{item.title}</span>
+            <span className="shrink-0 rounded-full bg-white/[0.025] px-2 py-1 text-[0.68rem] font-bold text-slate-600 transition group-hover:text-slate-400">{item.comments}</span>
           </Link>
         ))}
       </div>
-      <NeonButton href="/servera" variant="ghost" className="mt-5 rounded-md px-4 py-2.5 text-xs">Перейти на форум</NeonButton>
-    </div>
+      <NeonButton href="/servera" variant="ghost" className="mt-4 rounded-lg border-white/12 bg-white/[0.035] px-3.5 py-2 text-[0.64rem] text-slate-200 shadow-none">Перейти на форум</NeonButton>
+    </aside>
   );
 }
