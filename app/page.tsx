@@ -14,7 +14,7 @@ export default function Home() {
       <ImportantSection />
       <ServersSection />
       <section className="container pb-8 pt-3 sm:pb-10">
-        <div className="community-cta relative overflow-hidden rounded-lg border border-white/[0.08] bg-[#080b18] p-6 shadow-[0_24px_80px_rgba(0,0,0,0.36)] sm:p-8">
+        <div className="community-cta relative overflow-hidden rounded-2xl border border-white/[0.07] bg-[#050711] p-6 shadow-[0_24px_80px_rgba(0,0,0,0.36)] sm:p-8">
           <div className="relative z-10 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <h2 className="text-2xl font-black tracking-[-0.03em] text-white sm:text-3xl">Присоединяйся к нашему сообществу</h2>
