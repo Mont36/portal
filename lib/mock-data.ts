@@ -30,6 +30,7 @@ export type ServerItem = {
   description: string;
   tag: string;
   accent: "pink" | "cyan" | "violet";
+  image: string;
 };
 
 export type DiscussionItem = {
@@ -44,6 +45,7 @@ export type ImportantSectionItem = {
   href: string;
   cta: string;
   accent: "pink" | "cyan" | "violet";
+  image: string;
 };
 
 export type PageContent = {
@@ -98,7 +100,7 @@ export const latestNews: NewsItem[] = [
     category: "Официально",
     href: "/news",
     date: "2 часа назад",
-    image: "/placeholders/card-neon.svg",
+    image: "/public/images/home/news-trailer.png",
     accent: "pink",
     comments: 128,
   },
@@ -109,7 +111,7 @@ export const latestNews: NewsItem[] = [
     category: "Слухи",
     href: "/gta-6-na-pk",
     date: "5 часов назад",
-    image: "/placeholders/vice-city-grid.svg",
+    image: "/public/images/home/news-street.png",
     accent: "cyan",
     comments: 64,
   },
@@ -120,7 +122,7 @@ export const latestNews: NewsItem[] = [
     category: "Новости",
     href: "/news",
     date: "8 часов назад",
-    image: "/placeholders/server-neon.svg",
+    image: "/public/images/home/news-characters.png",
     accent: "violet",
     comments: 93,
   },
@@ -131,7 +133,7 @@ export const latestNews: NewsItem[] = [
     category: "Официально",
     href: "/personazhi",
     date: "12 часов назад",
-    image: "/placeholders/card-neon.svg",
+    image: "/public/images/home/hero-secondary.png",
     accent: "pink",
     comments: 77,
   },
@@ -144,6 +146,7 @@ export const importantSections: ImportantSectionItem[] = [
     href: "/karta",
     cta: "Смотреть карту",
     accent: "cyan",
+    image: "/public/images/home/map-preview.png",
   },
   {
     title: "Персонажи",
@@ -151,6 +154,7 @@ export const importantSections: ImportantSectionItem[] = [
     href: "/personazhi",
     cta: "Подробнее",
     accent: "pink",
+    image: "/public/images/home/characters-preview.png",
   },
   {
     title: "GTA 6 Online",
@@ -158,6 +162,7 @@ export const importantSections: ImportantSectionItem[] = [
     href: "/online",
     cta: "Читать",
     accent: "violet",
+    image: "/public/images/home/online-preview.png",
   },
   {
     title: "RP сервера",
@@ -165,6 +170,7 @@ export const importantSections: ImportantSectionItem[] = [
     href: "/rp",
     cta: "Выбрать сервер",
     accent: "pink",
+    image: "/public/images/home/rp-preview.png",
   },
 ];
 
@@ -185,6 +191,7 @@ export const servers: ServerItem[] = [
     description: "Неоновый криминальный RP с фракциями, бизнесами и медиа.",
     tag: "vice",
     accent: "pink",
+    image: "/public/images/home/rp-preview.png",
   },
   {
     name: "Leonida RP",
@@ -195,6 +202,7 @@ export const servers: ServerItem[] = [
     description: "Полиция, банды, карьеры и спокойный вход для новичков.",
     tag: "leonida",
     accent: "violet",
+    image: "/public/images/home/online-preview.png",
   },
   {
     name: "Sunshine State RP",
@@ -205,6 +213,7 @@ export const servers: ServerItem[] = [
     description: "Баланс открытого мира, гонок и городской ролевой игры.",
     tag: "sunshine",
     accent: "cyan",
+    image: "/public/images/home/news-street.png",
   },
   {
     name: "GTA 6 RP Project",
@@ -215,6 +224,7 @@ export const servers: ServerItem[] = [
     description: "Каталог команд, форум, заявки и первые игровые сценарии.",
     tag: "project",
     accent: "pink",
+    image: "/public/images/home/hero-secondary.png",
   },
 ];
 

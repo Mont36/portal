@@ -1,62 +1,47 @@
+import Image from "next/image";
 import Link from "next/link";
 import { NeonButton } from "@/components/NeonButton";
-import { discussions, latestNews } from "@/lib/mock-data";
-
-const visualClass = {
-  pink: "from-[#20101b] via-[#592039] to-[#03040a]",
-  cyan: "from-[#0d2430] via-[#17304f] to-[#03040a]",
-  violet: "from-[#19142c] via-[#32204d] to-[#03040a]",
-};
-
-function CinematicVisual({ accent, small = false }: { accent: keyof typeof visualClass; small?: boolean }) {
-  return (
-    <div className={`relative overflow-hidden bg-gradient-to-br ${visualClass[accent]} ${small ? "h-full min-h-24 rounded-xl" : "h-[380px] rounded-2xl"}`}>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_20%,rgba(255,214,154,.38),transparent_4.8rem),radial-gradient(circle_at_78%_36%,rgba(255,46,196,.18),transparent_7rem),linear-gradient(180deg,rgba(255,255,255,.025),rgba(2,4,12,.9))]" />
-      <div className="absolute inset-x-0 bottom-0 h-2/3 bg-[linear-gradient(to_top,rgba(3,4,10,.98),rgba(3,4,10,.36),transparent)]" />
-      <div className="absolute bottom-[13%] left-[7%] h-28 w-16 bg-black/55 blur-[1px] [clip-path:polygon(42%_0,58%_0,66%_100%,36%_100%)]" />
-      <div className="absolute bottom-[13%] left-[18%] h-36 w-28 rounded-t-[18%] bg-black/50 blur-[1px]" />
-      <div className="absolute bottom-[12%] right-[7%] h-20 w-48 rounded-t-[70%] bg-black/55 shadow-[0_-12px_36px_rgba(255,46,196,.12)]" />
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-[linear-gradient(100deg,transparent,rgba(255,46,196,.14),transparent),linear-gradient(78deg,transparent,rgba(34,211,238,.11),transparent)]" />
-      <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(90deg,transparent_0_49%,rgba(255,255,255,.35)_50%,transparent_51%)] [background-size:54px_100%]" />
-      <div className="absolute inset-0 shadow-[inset_0_0_70px_rgba(0,0,0,.7)]" />
-    </div>
-  );
-}
+import { discussions, latestNews, site } from "@/lib/mock-data";
 
 export function NewsSection() {
   const [featured, ...sideNews] = latestNews;
 
   return (
-    <section className="container pb-4 pt-1 sm:pb-6">
-      <div className="grid gap-4 lg:grid-cols-[1fr_340px] xl:grid-cols-[1fr_360px]">
-        <div className="rounded-2xl border border-white/[0.065] bg-[#050711]/88 p-5 sm:p-6 shadow-[0_22px_70px_rgba(0,0,0,0.36),inset_0_1px_0_rgba(255,255,255,0.04)]">
+    <section className="container pb-4 pt-2 sm:pb-7">
+      <div className="grid gap-5 lg:grid-cols-[1fr_340px] xl:grid-cols-[1fr_380px]">
+        <div className="rounded-[1.35rem] bg-[#050711]/64 p-4 shadow-[0_26px_85px_rgba(0,0,0,0.34)] ring-1 ring-white/[0.045] backdrop-blur-xl sm:p-6">
           <div className="mb-5 flex items-center justify-between gap-4">
-            <h2 className="text-xl font-black uppercase tracking-[-0.02em] text-white sm:text-2xl">Последние новости</h2>
-            <Link href="/news" className="text-xs font-black text-pink-400 transition hover:text-pink-200">Все новости</Link>
+            <h2 className="text-xl font-black tracking-[-0.02em] text-white sm:text-2xl">Последние новости</h2>
+            <Link href="/news" className="text-xs font-bold text-pink-300/90 transition hover:text-pink-100">Все новости</Link>
           </div>
 
-          <div className="grid gap-5 xl:grid-cols-[1.12fr_0.88fr]">
-            <Link href={featured.href} className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-slate-950/70 shadow-[0_20px_55px_rgba(0,0,0,0.38)]">
-              <CinematicVisual accent={featured.accent} />
-              <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
-                <span className="rounded-full bg-white/12 px-3 py-1 text-[0.65rem] font-black uppercase text-white backdrop-blur">{featured.category}</span>
-                <h3 className="mt-4 text-2xl font-black leading-tight text-white transition group-hover:text-pink-100">{featured.title}</h3>
-                <p className="mt-3 line-clamp-3 text-sm font-semibold leading-6 text-slate-200/90">{featured.excerpt}</p>
-                <div className="mt-4 flex items-center justify-between text-xs font-semibold text-slate-400">
+          <div className="grid gap-5 xl:grid-cols-[1.14fr_0.86fr]">
+            <Link href={featured.href} className="group relative min-h-[430px] overflow-hidden rounded-[1.2rem] bg-slate-950 shadow-[0_28px_70px_rgba(0,0,0,0.46)] ring-1 ring-white/[0.055]">
+              <Image src={featured.image} alt={featured.title} fill sizes="(max-width: 1280px) 100vw, 690px" className="object-cover transition duration-700 group-hover:scale-[1.035]" />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,4,10,0.04)_0%,rgba(3,4,10,0.32)_38%,rgba(3,4,10,0.96)_100%)]" />
+              <div className="absolute inset-0 shadow-[inset_0_0_95px_rgba(0,0,0,0.55)]" />
+              <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7">
+                <span className="rounded-full bg-black/38 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.1em] text-white backdrop-blur-md ring-1 ring-white/[0.08]">{featured.category}</span>
+                <h3 className="mt-4 text-2xl font-black leading-tight text-white transition group-hover:text-pink-100 sm:text-3xl">{featured.title}</h3>
+                <p className="mt-3 line-clamp-3 text-sm font-medium leading-6 text-slate-200/88">{featured.excerpt}</p>
+                <div className="mt-4 flex items-center justify-between text-xs font-medium text-slate-400">
                   <span>{featured.date}</span>
                   <span>◌ {featured.comments}</span>
                 </div>
               </div>
             </Link>
 
-            <div className="grid gap-4">
+            <div className="grid content-start gap-4">
               {sideNews.slice(0, 3).map((item) => (
-                <Link key={item.id} href={item.href} className="group grid grid-cols-[128px_1fr] gap-4 border-b border-white/[0.07] pb-4 last:border-b-0 last:pb-0 sm:grid-cols-[156px_1fr] xl:grid-cols-[150px_1fr]">
-                  <CinematicVisual accent={item.accent} small />
+                <Link key={item.id} href={item.href} className="group grid grid-cols-[128px_1fr] gap-4 rounded-2xl p-1 transition hover:bg-white/[0.03] sm:grid-cols-[166px_1fr] xl:grid-cols-[150px_1fr]">
+                  <div className="relative min-h-28 overflow-hidden rounded-[0.95rem] bg-slate-950 shadow-[0_16px_38px_rgba(0,0,0,0.34)]">
+                    <Image src={item.image} alt={item.title} fill sizes="180px" className="object-cover transition duration-500 group-hover:scale-[1.045]" />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,4,10,0.04),rgba(3,4,10,0.58))]" />
+                  </div>
                   <div className="min-w-0 py-1">
-                    <p className="text-[0.65rem] font-black uppercase tracking-[0.08em] text-slate-500">{item.category}</p>
-                    <h3 className="mt-2 text-base font-black leading-snug text-white transition group-hover:text-pink-200">{item.title}</h3>
-                    <div className="mt-4 flex items-center justify-between text-xs font-semibold text-slate-500">
+                    <p className="text-[0.65rem] font-bold uppercase tracking-[0.08em] text-slate-500">{item.category}</p>
+                    <h3 className="mt-2 text-base font-bold leading-snug text-white transition group-hover:text-pink-200">{item.title}</h3>
+                    <div className="mt-4 flex items-center justify-between text-xs font-medium text-slate-500">
                       <span>{item.date}</span>
                       <span>◌ {item.comments}</span>
                     </div>
@@ -67,23 +52,25 @@ export function NewsSection() {
           </div>
         </div>
 
-        <aside className="grid gap-4">
-          <div className="release-card relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#080a12] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
-            <h3 className="relative z-10 text-xl font-black uppercase text-white">Дата выхода</h3>
-            <div className="relative z-10 mt-24">
-              <p className="text-[2rem] font-black uppercase leading-tight tracking-[-0.05em] text-white">19 ноября 2026</p>
-              <p className="mt-2 font-semibold text-slate-300">PS5 и Xbox Series X|S</p>
-              <NeonButton href="/gta-6-data-vyhoda" className="mt-5 w-full rounded-md py-3 text-xs">Подробнее</NeonButton>
+        <aside className="grid content-start gap-4">
+          <div className="relative min-h-[320px] overflow-hidden rounded-[1.25rem] bg-[#080a12] p-5 shadow-[0_24px_70px_rgba(0,0,0,0.4)] ring-1 ring-white/[0.055]">
+            <Image src="/public/images/home/hero-secondary.png" alt="Дата выхода GTA 6" fill sizes="380px" className="object-cover" />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,4,10,0.3)_0%,rgba(3,4,10,0.62)_42%,rgba(3,4,10,0.96)_100%)]" />
+            <div className="relative z-10 flex h-full min-h-[280px] flex-col justify-end">
+              <h3 className="text-xl font-black text-white">Дата выхода</h3>
+              <p className="mt-3 text-[2rem] font-black uppercase leading-tight tracking-[-0.05em] text-white">{site.releaseDateLabel}</p>
+              <p className="mt-2 font-medium text-slate-300">PS5 и Xbox Series X|S</p>
+              <NeonButton href="/gta-6-data-vyhoda" className="mt-5 w-full rounded-xl py-3 text-xs">Подробнее</NeonButton>
             </div>
           </div>
 
-          <div className="rounded-2xl border border-white/[0.08] bg-[#050711]/95 p-5 shadow-[0_18px_55px_rgba(0,0,0,0.28)]">
-            <h3 className="text-xl font-black uppercase text-white">Подпишись на обновления</h3>
-            <p className="mt-2 text-sm font-semibold text-slate-400">Будь в курсе всех новостей GTA 6</p>
+          <div className="rounded-[1.25rem] bg-[linear-gradient(145deg,rgba(9,12,24,0.96),rgba(25,9,24,0.76))] p-5 shadow-[0_20px_62px_rgba(0,0,0,0.34)] ring-1 ring-white/[0.055]">
+            <h3 className="text-xl font-black text-white">Подпишись на обновления</h3>
+            <p className="mt-2 text-sm font-medium text-slate-400">Будь в курсе всех новостей GTA 6</p>
             <div className="mt-5 grid grid-cols-3 gap-3">
-              <Link href="https://t.me/" className="grid h-11 place-items-center rounded-md bg-sky-500 text-lg font-black text-white shadow-[0_0_24px_rgba(14,165,233,0.25)]">↗</Link>
-              <Link href="https://vk.com/" className="grid h-11 place-items-center rounded-md bg-blue-600 text-sm font-black text-white shadow-[0_0_24px_rgba(37,99,235,0.25)]">VK</Link>
-              <Link href="https://discord.com/" className="grid h-11 place-items-center rounded-md bg-indigo-500 text-lg font-black text-white shadow-[0_0_24px_rgba(99,102,241,0.25)]">⌁</Link>
+              <Link href="https://t.me/" className="grid h-11 place-items-center rounded-xl bg-white/[0.055] text-sm font-bold text-slate-100 ring-1 ring-white/[0.06] transition hover:bg-sky-400/18 hover:text-sky-100">TG</Link>
+              <Link href="https://vk.com/" className="grid h-11 place-items-center rounded-xl bg-white/[0.055] text-sm font-bold text-slate-100 ring-1 ring-white/[0.06] transition hover:bg-blue-400/18 hover:text-blue-100">VK</Link>
+              <Link href="https://discord.com/" className="grid h-11 place-items-center rounded-xl bg-white/[0.055] text-sm font-bold text-slate-100 ring-1 ring-white/[0.06] transition hover:bg-indigo-400/18 hover:text-indigo-100">DS</Link>
             </div>
           </div>
         </aside>
@@ -94,17 +81,17 @@ export function NewsSection() {
 
 export function DiscussionsPreview() {
   return (
-    <div className="rounded-2xl border border-white/[0.08] bg-[#050711]/95 p-5 shadow-[0_18px_55px_rgba(0,0,0,0.28)]">
-      <h3 className="text-xl font-black uppercase text-white">Сейчас обсуждают</h3>
+    <div className="rounded-[1.25rem] bg-[#050711]/72 p-5 shadow-[0_18px_55px_rgba(0,0,0,0.28)] ring-1 ring-white/[0.05] backdrop-blur-xl">
+      <h3 className="text-xl font-black text-white">Сейчас обсуждают</h3>
       <div className="mt-4 grid gap-1">
         {discussions.map((item) => (
-          <Link key={item.title} href={item.href} className="flex items-center justify-between gap-4 border-b border-white/[0.07] py-3 text-sm font-bold text-slate-200 transition last:border-b-0 hover:text-pink-200">
+          <Link key={item.title} href={item.href} className="flex items-center justify-between gap-4 rounded-xl px-2 py-3 text-sm font-semibold text-slate-200 transition hover:bg-white/[0.035] hover:text-pink-200">
             <span>{item.title}</span>
             <span className="shrink-0 text-slate-500">◌ {item.comments}</span>
           </Link>
         ))}
       </div>
-      <NeonButton href="/servera" variant="ghost" className="mt-5 rounded-md px-4 py-2.5 text-xs">Перейти на форум</NeonButton>
+      <NeonButton href="/servera" variant="ghost" className="mt-5 rounded-xl px-4 py-2.5 text-xs">Перейти на форум</NeonButton>
     </div>
   );
 }
