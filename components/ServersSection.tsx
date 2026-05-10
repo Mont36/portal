@@ -7,7 +7,7 @@ export function ServersSection() {
   return (
     <section className="container py-4 sm:py-6">
       <div className="grid gap-4 lg:grid-cols-[1fr_360px]">
-        <div className="rounded-2xl border border-white/[0.065] bg-[#050711]/88 p-5 sm:p-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)]">
+        <div className="rounded-2xl bg-[#050711]/82 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.26)] ring-1 ring-white/[0.025] sm:p-6">
           <div className="mb-5 flex items-center justify-between gap-4">
             <h2 className="text-xl font-black uppercase text-white sm:text-2xl">Популярные RP-серверы</h2>
             <Link href="/servera" className="text-xs font-black text-pink-400 transition hover:text-pink-200">Все сервера</Link>
