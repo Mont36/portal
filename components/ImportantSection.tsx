@@ -22,7 +22,7 @@ export function ImportantSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#03040a] via-[#03040a]/68 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-5">
                 <h3 className="text-xl font-black uppercase text-white">{item.title}</h3>
-                <p className="mt-3 min-h-12 text-sm font-semibold leading-6 text-slate-200/90">{item.description}</p>
+                <p className="mt-3 min-h-12 max-w-[92%] text-sm font-semibold leading-[1.55] text-slate-200/90">{item.description}</p>
                 <NeonButton href={item.href} variant="ghost" className="mt-5 rounded-md border-pink-400/60 px-4 py-2.5 text-xs">
                   {item.cta}
                 </NeonButton>

@@ -38,10 +38,10 @@ export function NewsSection() {
           <div className="grid gap-5 xl:grid-cols-[1.12fr_0.88fr]">
             <Link href={featured.href} className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-slate-950/70 shadow-[0_20px_55px_rgba(0,0,0,0.38)]">
               <CinematicVisual accent={featured.accent} />
-              <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+              <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7">
                 <span className="rounded-full bg-white/12 px-3 py-1 text-[0.65rem] font-black uppercase text-white backdrop-blur">{featured.category}</span>
                 <h3 className="mt-4 text-2xl font-black leading-tight text-white transition group-hover:text-pink-100">{featured.title}</h3>
-                <p className="mt-3 line-clamp-3 text-sm font-semibold leading-6 text-slate-200/90">{featured.excerpt}</p>
+                <p className="mt-3 max-w-[92%] line-clamp-2 text-sm font-semibold leading-[1.65] text-slate-200/90">{featured.excerpt}</p>
                 <div className="mt-4 flex items-center justify-between text-xs font-semibold text-slate-400">
                   <span>{featured.date}</span>
                   <span>◌ {featured.comments}</span>
@@ -72,14 +72,14 @@ export function NewsSection() {
             <h3 className="relative z-10 text-xl font-black uppercase text-white">Дата выхода</h3>
             <div className="relative z-10 mt-24">
               <p className="text-[2rem] font-black uppercase leading-tight tracking-[-0.05em] text-white">19 ноября 2026</p>
-              <p className="mt-2 font-semibold text-slate-300">PS5 и Xbox Series X|S</p>
+              <p className="mt-2 max-w-[260px] text-sm font-semibold leading-6 text-slate-300">Релиз на PS5 и Xbox Series X|S</p>
               <NeonButton href="/gta-6-data-vyhoda" className="mt-5 w-full rounded-md py-3 text-xs">Подробнее</NeonButton>
             </div>
           </div>
 
           <div className="rounded-2xl border border-white/[0.08] bg-[#050711]/95 p-5 shadow-[0_18px_55px_rgba(0,0,0,0.28)]">
             <h3 className="text-xl font-black uppercase text-white">Подпишись на обновления</h3>
-            <p className="mt-2 text-sm font-semibold text-slate-400">Будь в курсе всех новостей GTA 6</p>
+            <p className="mt-2 max-w-[280px] text-sm font-semibold leading-6 text-slate-400">Коротко о новостях, датах и важных обновлениях GTA 6</p>
             <div className="mt-5 grid grid-cols-3 gap-3">
               <Link href="https://t.me/" className="grid h-11 place-items-center rounded-md bg-sky-500 text-lg font-black text-white shadow-[0_0_24px_rgba(14,165,233,0.25)]">↗</Link>
               <Link href="https://vk.com/" className="grid h-11 place-items-center rounded-md bg-blue-600 text-sm font-black text-white shadow-[0_0_24px_rgba(37,99,235,0.25)]">VK</Link>
