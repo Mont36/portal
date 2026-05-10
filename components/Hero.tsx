@@ -13,15 +13,15 @@ export function Hero() {
         <div className="absolute inset-0 z-10 shadow-[inset_0_0_150px_rgba(0,0,0,0.88)]" />
 
         <div className="relative z-20 flex min-h-[620px] items-start px-5 py-10 sm:min-h-[640px] sm:px-9 sm:py-12 lg:min-h-[610px] lg:items-center lg:px-14 xl:px-16">
-          <div className="max-w-[525px] pt-6 sm:pt-8 lg:pt-0">
+          <div className="max-w-[540px] pt-6 sm:pt-8 lg:pt-0">
             <p className="mb-5 inline-flex rounded-full border border-white/[0.12] bg-black/35 px-3 py-1.5 text-[0.66rem] font-black uppercase tracking-[0.22em] text-pink-100/90 shadow-[0_0_26px_rgba(255,46,196,0.12)] backdrop-blur-md">
               GTA6Portal.ru / Главная
             </p>
-            <h1 className="text-[2.45rem] font-black leading-[1.03] tracking-[-0.045em] text-white drop-shadow-[0_8px_32px_rgba(0,0,0,0.84)] sm:text-[3.45rem] lg:text-[3.55rem] xl:text-[4.05rem]">
+            <h1 className="text-[2.45rem] font-black leading-[1.06] tracking-[-0.045em] text-white drop-shadow-[0_8px_32px_rgba(0,0,0,0.84)] sm:text-[3.45rem] lg:text-[3.55rem] xl:text-[4.05rem]">
               GTA 6 — всё, что известно на данный момент
             </h1>
-            <p className="mt-5 max-w-[500px] text-base font-semibold leading-7 text-slate-200/86 sm:text-lg">
-              Новости, дата выхода, карта, персонажи, трейлеры, GTA 6 Online и будущие RP-серверы — в одном тёмном медиа-портале без лишнего шума.
+            <p className="mt-5 max-w-[485px] text-base font-semibold leading-7 text-slate-200/86 sm:text-lg">
+              Новости, дата выхода, карта, персонажи, трейлеры, GTA 6 Online и будущие RP-серверы.
             </p>
             <div className="mt-8 max-w-[500px] rounded-2xl border border-white/[0.09] bg-black/30 p-4 shadow-[0_18px_60px_rgba(0,0,0,0.32)] backdrop-blur-md sm:p-5">
               <p className="mb-3 text-xs font-black uppercase tracking-[0.12em] text-slate-300">До выхода GTA 6 осталось</p>
