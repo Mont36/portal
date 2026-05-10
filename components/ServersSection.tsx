@@ -5,12 +5,12 @@ import { servers } from "@/lib/mock-data";
 
 export function ServersSection() {
   return (
-    <section className="container py-4 sm:py-6">
-      <div className="grid gap-4 lg:grid-cols-[1fr_360px]">
-        <div className="rounded-2xl border border-white/[0.065] bg-[#050711]/88 p-5 sm:p-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)]">
+    <section className="container py-4 sm:py-7">
+      <div className="grid gap-5 lg:grid-cols-[1fr_380px]">
+        <div>
           <div className="mb-5 flex items-center justify-between gap-4">
-            <h2 className="text-xl font-black uppercase text-white sm:text-2xl">Популярные RP-серверы</h2>
-            <Link href="/servera" className="text-xs font-black text-pink-400 transition hover:text-pink-200">Все сервера</Link>
+            <h2 className="text-xl font-black tracking-[-0.02em] text-white sm:text-2xl">Популярные RP-серверы</h2>
+            <Link href="/servera" className="text-xs font-bold text-pink-300/90 transition hover:text-pink-100">Все сервера</Link>
           </div>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {servers.map((server) => (

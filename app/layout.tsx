@@ -20,13 +20,13 @@ export const metadata: Metadata = {
     siteName: site.name,
     locale: "ru_RU",
     type: "website",
-    images: [{ url: "/placeholders/vice-city-grid.svg", width: 1200, height: 675 }],
+    images: [{ url: "/public/images/home/hero-main.png", width: 1200, height: 675 }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name} — русский портал про GTA 6`,
     description: site.description,
-    images: ["/placeholders/vice-city-grid.svg"],
+    images: ["/public/images/home/hero-main.png"],
   },
 };
 
@@ -34,7 +34,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
   return (
     <html lang="ru">
       <body>
-        <div className="pointer-events-none fixed inset-0 -z-10 grid-glow opacity-50" />
+        <div className="pointer-events-none fixed inset-0 -z-10 grid-glow opacity-15" />
         <Header />
         <main>{children}</main>
         <Footer />
